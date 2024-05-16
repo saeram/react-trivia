@@ -12,7 +12,7 @@ body {
 
 
 .quiz-container {
-    width: 500px;
+    width: 550px;
     background: #ececec;
     border-radius: 4px;
     margin-top: 100px;
@@ -33,11 +33,56 @@ body {
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 23px;
     margin: 0;
 }
 
+ol{
+    margin-top: 20px;
+    margin-left: -40px;
+}
+
 li {
-    list-style: none;
+    margin: 15px;
+    list-style-position: inside;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 16px;
+    padding: 10px;
+
+}
+.selected-index {
+    background: salmon;
+    border: 3px solid #9fd3c7;
+    color:#faf4f4;
+}
+
+button {
+    margin-top: 15px;
+    margin-left: 10px;
+    background: #9fd3c7;
+    border-radius: 9px;
+    font-size: 19px;
+    padding: 10px 42px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &:disabled {
+        color: gray;
+        cursor: not-allowed;
+    }
+
+}
+
+h3 {
+    font-size: 18px;
+    color: #142d4c;
+    margin: 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
 }
