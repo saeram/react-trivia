@@ -1,0 +1,43 @@
+
+
+body {
+    background-color: #142d4c;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 30px;
+    height: 100vh;
+    font-family: monospace;
+}
+
+
+.quiz-container {
+    width: 500px;
+    background: #ececec;
+    border-radius: 4px;
+    margin-top: 100px;
+    padding: 30px 60px;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.active-question {
+    font-size: 32px;
+    color: black;
+
+}
+
+.total-question {
+    font-size: 16px;
+    color: gray;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
