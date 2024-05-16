@@ -47,42 +47,80 @@ function Trivia() {
 
   return (
     <>
-      <div className="quiz-container">
-        <span className="active-question">{current + 1}</span>
-        <span className="total-question">/{quiz.length}</span>
-        <h2>{question}</h2>
-        <ol>
-          {choices.map((choice, index) => (
-            <li
-              key={choice}
-              onClick={() => onAnswerClick(choice, index)}
-              className={selectedIndex === index ? "selected-index" : ""}>
-              {choice}
-            </li>
-          ))}
-        </ol>
-        {submitted && !answer ? (
-          <h3>Uh-oh</h3>
-        ) : submitted && answer ? (
-          <h3>You got it!</h3>
-        ) : (
-          <></>
-        )}
+    <div className="quiz-container">
+    {showResult ? <h2> Your Score: {score} </h2> :
+    <>
+      <span className="active-question">{current + 1}</span>
+      <span className="total-question">/{quiz.length}</span>
+      <h2>{question}</h2>
+      <ol>
+        {choices.map((choice, index) => (
+          <li
+            key={choice}
+            onClick={() => onAnswerClick(choice, index)}
+            className={selectedIndex === index ? "selected-index" : ""}>
+            {choice}
+          </li>
+        ))}
+      </ol>
+      {submitted && !answer ? (
+        <h3>Uh-oh</h3>
+      ) : submitted && answer ? (
+        <h3>You got it!</h3>
+      ) : (
+        <></>
+      )}
 
-        <div className="footer">
-          <button onClick={onPrev} disabled={current === 0}>
-            Previous
-          </button>
-          <button onClick={onSubmit} disabled={submitted}>
-            Submit
-          </button>
+      <div className="footer">
+        <button onClick={onPrev} disabled={current === 0}>
+          Previous
+        </button>
+        <button onClick={onSubmit} disabled={submitted}>
+          Submit
+        </button>
 
-          <button onClick={onNext} disabled={!submitted}>
-            {current === quiz.length - 1 ? "Finish" : "Next"}
-          </button>
-        </div>
-      </div>
-    </>
+        <button onClick={onNext} disabled={!submitted}>
+          {current === quiz.length - 1 ? "Finish" : "Next"}
+        </button>
+      </div></>}
+    </div></>
+    // <>
+    //   <div className="quiz-container">
+    //     <span className="active-question">{current + 1}</span>
+    //     <span className="total-question">/{quiz.length}</span>
+    //     <h2>{question}</h2>
+    //     <ol>
+    //       {choices.map((choice, index) => (
+    //         <li
+    //           key={choice}
+    //           onClick={() => onAnswerClick(choice, index)}
+    //           className={selectedIndex === index ? "selected-index" : ""}>
+    //           {choice}
+    //         </li>
+    //       ))}
+    //     </ol>
+    //     {submitted && !answer ? (
+    //       <h3>Uh-oh</h3>
+    //     ) : submitted && answer ? (
+    //       <h3>You got it!</h3>
+    //     ) : (
+    //       <></>
+    //     )}
+
+    //     <div className="footer">
+    //       <button onClick={onPrev} disabled={current === 0}>
+    //         Previous
+    //       </button>
+    //       <button onClick={onSubmit} disabled={submitted}>
+    //         Submit
+    //       </button>
+
+    //       <button onClick={onNext} disabled={!submitted}>
+    //         {current === quiz.length - 1 ? "Finish" : "Next"}
+    //       </button>
+    //     </div>
+    //   </div>
+    // </>
   );
 }
 
