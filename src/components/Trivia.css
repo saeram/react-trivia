@@ -37,6 +37,16 @@ h2 {
     margin: 0;
 }
 
+.score {
+    font-size: 25px;
+    font-weight: bold;
+    color: #f54b42;
+}
+
+.try-again {
+    font-size: 25px;
+}
+
 ol{
     margin-top: 20px;
     margin-left: -40px;
